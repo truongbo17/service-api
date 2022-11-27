@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "40e6454c23428da745f264060d8f0fb6",
+    "content-hash": "0dca614e092c3a1ef6fc777c7bf97d3a",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -5777,6 +5777,65 @@
             "time": "2022-09-12T13:28:28+00:00"
         },
         {
+            "name": "truongbo/proxy-rotation",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/truongbo17/proxy-rotator.git",
+                "reference": "332496069d05d11b7216d7fad2f394c5c174eca6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/truongbo17/proxy-rotator/zipball/332496069d05d11b7216d7fad2f394c5c174eca6",
+                "reference": "332496069d05d11b7216d7fad2f394c5c174eca6",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^7.11"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "TruongBo\\ProxyRotation\\ProxyRotationServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TruongBo\\ProxyRotation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nguyen Quang Truong",
+                    "email": "truongnq017@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Proxy Rotation with Load balancing strategies",
+            "keywords": [
+                "balancing",
+                "load",
+                "random",
+                "robin",
+                "round",
+                "weighted"
+            ],
+            "support": {
+                "issues": "https://github.com/truongbo17/proxy-rotator/issues",
+                "source": "https://github.com/truongbo17/proxy-rotator/tree/v1.0.3"
+            },
+            "time": "2022-11-05T08:30:45+00:00"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v5.5.0",
             "source": {
@@ -9088,8 +9147,8 @@
     "prefer-lowest": false,
     "platform": {
         "php": "^8.1",
-        "ext-dom": "*",
-        "ext-curl": "*"
+        "ext-curl": "*",
+        "ext-dom": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.3.0"
