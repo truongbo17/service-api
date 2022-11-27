@@ -33,12 +33,28 @@ class RouteServiceProvider extends ServiceProvider
                 ->prefix('api')
                 ->group(base_path('routes/api.php'));
 
+            Route::middleware('web')
+                ->group(base_path('routes/web.php'));
+
             Route::middleware(['api', 'auth_api'])
                 ->prefix('api/v1')
                 ->group(base_path('routes/api/v1/trending.php'));
 
-            Route::middleware('web')
-                ->group(base_path('routes/web.php'));
+            Route::middleware(['api', 'auth_api'])
+                ->prefix('api/v1')
+                ->group(base_path('routes/api/v1/user.php'));
+
+            Route::middleware(['api', 'auth_api'])
+                ->prefix('api/v1')
+                ->group(base_path('routes/api/v1/tiktok.php'));
+
+            Route::middleware(['api', 'auth_api'])
+                ->prefix('api/v1')
+                ->group(base_path('routes/api/v1/hashtag.php'));
+
+            Route::middleware(['api', 'auth_api'])
+                ->prefix('api/v1')
+                ->group(base_path('routes/api/v1/music.php'));
         });
     }
 
