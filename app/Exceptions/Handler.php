@@ -45,13 +45,15 @@ class Handler extends ExceptionHandler
     public function register()
     {
         $this->renderable(function (Throwable $e) {
-            $message = 'Server error';
+            $message = 'Server Error';
             if ($e->getStatusCode() === 404) {
-                $message = 'Not found';
+                $message = 'Not Found';
             }
             return response([
                 'status_code' => $e->getStatusCode() ?: 400,
-                'message'     => $message
+                'message'     => $message,
+                'data'        => [],
+                'error'       => true
             ], $e->getStatusCode() ?: 400);
         });
     }
