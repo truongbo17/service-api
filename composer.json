@@ -9,25 +9,17 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
-        "backpack/backupmanager": "^4.0",
-        "backpack/crud": "^5.3",
-        "backpack/filemanager": "^2.0",
         "bensampo/laravel-enum": "^6.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "league/flysystem-aws-s3-v3": "3.0",
-        "opcodesio/log-viewer": "^1.6",
-        "pablouser1/tikscraper": "v2.3.2.1",
-        "pbmedia/laravel-ffmpeg": "^8.1",
         "predis/predis": "^2.0",
-        "truongbo/proxy-rotation": "@dev",
         "ext-dom": "*",
         "ext-curl": "*"
     },
     "require-dev": {
-        "backpack/generators": "^3.3",
         "barryvdh/laravel-debugbar": "^3.7",
         "barryvdh/laravel-ide-helper": "^2.12",
         "fakerphp/faker": "^1.9.1",
@@ -38,12 +30,6 @@
         "phpunit/phpunit": "^9.5.10",
         "spatie/laravel-ignition": "^1.0"
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "/private/var/www/main-service/proxy-rotator"
-        }
-    ],
     "autoload": {
         "psr-4": {
             "App\\": "app/",

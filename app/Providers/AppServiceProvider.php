@@ -5,7 +5,6 @@ namespace App\Providers;
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use GuzzleHttp\Client;
 use Illuminate\Support\ServiceProvider;
-use Opcodes\LogViewer\Facades\LogViewer;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -30,8 +29,5 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        LogViewer::auth(function () {
-            return backpack_user();
-        });
     }
 }

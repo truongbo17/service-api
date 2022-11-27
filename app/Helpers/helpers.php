@@ -1,7 +1,5 @@
 <?php
 
-use PackageVersions\Versions;
-
 if (!function_exists('build_external_url')) {
     /**
      * Build url from host , path , query,....
@@ -44,9 +42,4 @@ if (!function_exists('array_multiple_keys_exist')) {
 
         return true;
     }
-}
-
-function backpack_pro(): string
-{
-    return Versions::getVersion('backpack/crud');
 }

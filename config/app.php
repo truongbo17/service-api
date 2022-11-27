@@ -186,7 +186,6 @@ return [
          * Package Service Providers...
          */
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        ProtoneMedia\LaravelFFMpeg\Support\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -214,7 +213,6 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
         'TiktokApiNature' => App\Facades\TiktokApiNatureFacade::class,
         'TiktokWmApi' => App\Facades\TikWMApiFacade::class,
-        'FFMpeg' => ProtoneMedia\LaravelFFMpeg\Support\FFMpeg::class,
     ])->toArray(),
 
 ];
