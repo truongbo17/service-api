@@ -14,6 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('tiktok',function (){
-    return 1;
-});
+Route::get('info-video',[\App\Http\Controllers\Api\TiktokController::class, 'infoVideo']);

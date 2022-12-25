@@ -33,7 +33,7 @@ class MusicController extends Controller
                 'status_code' => 200,
                 'message'     => "Success get data music.",
                 'data'        => $data_videos,
-                'error'       => true
+                'error'       => false
             ], 200);
         } catch (Exception $exception) {
             Log::error($exception);

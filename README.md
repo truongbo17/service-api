@@ -52,3 +52,9 @@ docker run --publish 8080:8080 ghcr.io/pablouser1/signtok:master
         * `challenge_name` : challenge name
         * `cursor` : cursor video
         * `count` : count video
+
+* Get info video
+    * Path : `api/v1/info-video`
+    * Method : `GET`
+    * Body :
+        * `tiktok_url` : tiktok url

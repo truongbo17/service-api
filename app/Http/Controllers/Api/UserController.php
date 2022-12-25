@@ -33,7 +33,7 @@ class UserController extends Controller
                 'status_code' => 200,
                 'message'     => "Success get data user.",
                 'data'        => $data_videos,
-                'error'       => true
+                'error'       => false
             ], 200);
         } catch (Exception $exception) {
             Log::error($exception);

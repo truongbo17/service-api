@@ -13,7 +13,7 @@ class DownloadVideoRequest extends FormRequest
      */
     public function authorize()
     {
-        return backpack_auth()->check();
+        return true;
     }
 
     /**
@@ -24,8 +24,7 @@ class DownloadVideoRequest extends FormRequest
     public function rules()
     {
         return [
-            'disk'      => 'required|string',
-            'file_path' => 'required|string',
+            'tiktok_url' => 'required|string',
         ];
     }
 }

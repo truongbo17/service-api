@@ -146,7 +146,7 @@ class TiktokApi
 
             $response = $this->client->request($method, $endpoint, [
                 'headers' => [
-                    'User-Agent' => UserAgents::DEFAULT->get(),
+                    'User-Agent' => UserAgents::DOWNLOAD->get(),
                 ]
             ]);
             $contents = json_decode($response->getBody()->getContents(), true);
