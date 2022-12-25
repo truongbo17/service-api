@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
 use Psr\Log\LogLevel;
 use Throwable;
 
@@ -45,16 +46,30 @@ class Handler extends ExceptionHandler
     public function register()
     {
         $this->renderable(function (Throwable $e) {
+            if($e instanceof ValidationException){
+                return response([
+                    'status_code' => 422,
+                    'message'     => $e->getMessage(),
+                    'data'        => [],
+                    'error'       => true
+                ], 422);
+            }
+
+            $status_code = 400;
+            if(method_exists($e, 'getStatusCode')){
+                $status_code = $e->getStatusCode();
+            }
+
             $message = 'Server Error';
-            if ($e->getStatusCode() === 404) {
+            if ($status_code === 404) {
                 $message = 'Not Found';
             }
             return response([
-                'status_code' => $e->getStatusCode() ?: 400,
+                'status_code' => $status_code,
                 'message'     => $message,
                 'data'        => [],
                 'error'       => true
-            ], $e->getStatusCode() ?: 400);
+            ], $status_code);
         });
     }
 }

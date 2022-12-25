@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('music',function (){
-    return 1;
-});
+Route::get('music', [\App\Http\Controllers\Api\MusicController::class, 'get']);

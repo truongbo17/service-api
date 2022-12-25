@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MusicsRequest extends FormRequest
+class HashTagRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,7 @@ class MusicsRequest extends FormRequest
     public function rules()
     {
         return [
-            'music_id' => 'required|numeric',
+            'challenge_name' => 'required|string',
             'count'          => 'nullable|numeric',
             'cursor'         => 'nullable|numeric',
         ];
