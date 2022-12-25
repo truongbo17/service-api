@@ -22,3 +22,33 @@ docker run --publish 8080:8080 ghcr.io/pablouser1/signtok:master
 - Set .env `ENDPOINT_TIKTOK_SIGNATURE=http://127.0.0.1:8080`
 
 ### API Document
+* Get list video trending
+  * Path : `api/v1/trending`
+  * Method : `GET`
+  * Body : 
+    * `cursor` : cursor video
+    * `count` : count video
+
+* Get list video by music
+    * Path : `api/v1/music`
+    * Method : `GET`
+    * Body :
+      * `music_id` : music id 
+      * `cursor` : cursor video
+      * `count` : count video
+
+* Get list video by user
+    * Path : `api/v1/user`
+    * Method : `GET`
+    * Body :
+        * `unique_id` : unique user id
+        * `cursor` : cursor video
+        * `count` : count video
+
+* Get list video by hashtag
+    * Path : `api/v1/hashtag`
+    * Method : `GET`
+    * Body :
+        * `challenge_name` : challenge name
+        * `cursor` : cursor video
+        * `count` : count video
