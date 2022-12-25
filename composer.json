@@ -18,7 +18,7 @@
         "laravel/tinker": "^2.7",
         "league/flysystem-aws-s3-v3": "3.0",
         "predis/predis": "^2.0",
-        "truongbo/proxy-rotation": "^1.0"
+        "truongbo/proxy-rotation": "^2"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.12",

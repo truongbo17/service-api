@@ -37,50 +37,8 @@ class TestApiCommand extends Command
     /**
      * Execute the console command.
      *
-     * @return int
-     * @throws EmptyHostException
-     * @throws GuzzleException
      */
     public function handle()
     {
-
-        $downloader = new Download(DownloadMethods::DEFAULT);
-
-        $downloader->url("https://www.tiktok.com/@willsmith/video/7079929224945093934", "example", false);
-        die();
-        header('Content-Type: application/json');
-        $api = new \TikScraper\Api([
-            'signer' => [
-                'method' => 'remote',
-            ]
-        ]);
-        $item = $api->user('charlidamelio');
-        dd($item->feed()->getFull());
-        $full = $item->feed()->getFull();
-        dd($full);
-
-
-        $rotation = new Rotation(new RoundRobin(counter: 0));
-        $proxy_cluster = new ProxyCluster(
-            cluster_name: 'cluster1',
-            array_proxy_node: [
-                new ProxyNode(name: 'proxy-node1'),
-                new ProxyNode(name: 'proxy-node2'),
-                new ProxyNode(name: 'proxy-node3'),
-                new ProxyNode(name: 'proxy-node4'),
-            ]);
-
-        $stack = HandlerStack::create();
-//        $stack->push(new ProxyMiddleware(rotation: $rotation, proxy_cluster: $proxy_cluster));
-
-        $host1 = new Host( 'https://faceb2ook.com', 'GET', 2);
-        $host2 = new Host( 'https://httpbin.org/ip', 'GET');
-
-        $client = new Client([
-            'handler' => $stack,
-        ], $host1, $host2);
-        dd($client->send()->getStatusCode());
-
-        return CommandAlias::SUCCESS;
     }
 }

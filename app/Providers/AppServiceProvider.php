@@ -5,6 +5,7 @@ namespace App\Providers;
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
+use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 use TruongBo\ProxyRotation\Middleware\ProxyMiddleware;
 use TruongBo\ProxyRotation\ProxyServer\ProxyCluster;
@@ -12,7 +13,7 @@ use TruongBo\ProxyRotation\ProxyServer\ProxyNode;
 use TruongBo\ProxyRotation\Rotation;
 use TruongBo\ProxyRotation\Strategy\RoundRobin;
 
-class AppServiceProvider extends ServiceProvider
+class AppServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     /**
      * Register any application services.
@@ -51,12 +52,8 @@ class AppServiceProvider extends ServiceProvider
         return $stack;
     }
 
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
+    public function provides()
     {
+        return ['client'];
     }
 }

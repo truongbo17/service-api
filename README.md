@@ -3,7 +3,7 @@
 _(Working with PHP8.1)_
 
 - **Importation** Set .env `AUTH_TOKEN_API=your_token` this code will authenticate api requests, only this one will work.
-
+- Set cookie in `config/tiktok.php` with key `tiktok_cookie`
 ---------------
 ### Proxy Rotation
 
