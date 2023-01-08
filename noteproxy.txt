@@ -1,9 +1,0 @@
-$client = new Client();
-        try {
-            $res = $client->request('GET', 'https://httpbin.org/ip', [
-                'proxy' => '217.11.184.27:3128',
-            ]);
-            dd($res->getBody()->getContents());
-        }catch (\Exception $exception){
-            dd($exception->getMessage());
-        }
