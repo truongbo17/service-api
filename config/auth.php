@@ -108,6 +108,6 @@ return [
 
     'password_timeout' => 10800,
 
-    'key_custom_token_auth' => 'auth_token',
+    'key_custom_token_auth' => 'Auth-Token',
     'custom_token_auth'     => env('AUTH_TOKEN_API', 'nEtmArxiFu6iyw6oZdf89sEIVJfgcRiZ'),
 ];

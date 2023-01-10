@@ -1,41 +1,16 @@
 version: '3'
+
 services:
-
-    #PHP Service
     app:
+        container_name: service-api
         build:
-            context: .
-            dockerfile: ./.docker/php/Dockerfile
-        image: laravel_php
-        container_name: app
-        restart: unless-stopped
-        tty: true
-        environment:
-            SERVICE_NAME: app
-            SERVICE_TAGS: dev
-        working_dir: /var/www
-        volumes:
-            - ./:/var/www
-            - ./.docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
-        networks:
-            - app-network
-
-    #Nginx Service
-    webserver:
-        image: nginx:alpine
-        container_name: webserver
-        restart: unless-stopped
-        tty: true
+            context: ./
+            dockerfile: Dockerfile
+        working_dir: /var/www/api
         ports:
-            - "8080:8080"
-            - "443:443"
+            - "8081:80"
+        environment:
+            - "AUTH_TOKEN_API=truongbo"
         volumes:
-            - ./:/var/www
-            - ./nginx/conf.d/:/etc/nginx/conf.d/
-        networks:
-            - app-network
-
-#Docker Networks
-networks:
-    app-network:
-        driver: bridge
+            - ./storage/logs/nginx:/var/log/nginx
+            - ./.docker/.composer:/root/.composer
