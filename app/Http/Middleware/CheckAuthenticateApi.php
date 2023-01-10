@@ -18,16 +18,19 @@ class CheckAuthenticateApi
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->hasHeader(config('auth.key_custom_token_auth'))
-            && $request->header(config('auth.key_custom_token_auth')) == config('auth.custom_token_auth')
-        ) {
-            return $next($request);
+        $auth_key = config('auth.custom_token_auth', 'nEtmArxiFu6iyw6oZdf89sEIVJfgcRiZ');
+        if($auth_key == "") $auth_key = 'nEtmArxiFu6iyw6oZdf89sEIVJfgcRiZ';
+
+        if ($request->hasHeader(config('auth.key_custom_token_auth'))) {
+            if ($request->header(config('auth.key_custom_token_auth')) == $auth_key) {
+                return $next($request);
+            }
         }
         return response([
             'status_code' => 401,
-            'message'     => "Authentication Failed",
-            'data'        => [],
-            'error'       => true
+            'message' => "Authentication Failed",
+            'data' => [],
+            'error' => true
         ], 401);
     }
 }
