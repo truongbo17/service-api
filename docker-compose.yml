@@ -7,10 +7,19 @@ services:
             context: ./
             dockerfile: Dockerfile
         working_dir: /var/www/api
+        restart: unless-stopped
         ports:
             - "8081:80"
         environment:
             - "AUTH_TOKEN_API=truongbo"
+            - "ENDPOINT_TIKTOK_SIGNATURE=http://localhost:8080"
         volumes:
             - ./storage/logs/nginx:/var/log/nginx
             - ./.docker/.composer:/root/.composer
+    signature:
+        container_name: signature
+        image: ghcr.io/pablouser1/signtok:master
+        restart: unless-stopped
+        ports:
+            - "8080:8080"
+
