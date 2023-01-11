@@ -78,6 +78,8 @@ RUN cd /var/www/api && composer install
 RUN cd /var/www/api && composer dump-autoload
 RUN cd /var/www/api && php artisan cache:clear
 RUN cd /var/www/api && php artisan config:clear
+RUN cd /var/www/api && php artisan view:clear
+RUN cd /var/www/api && php artisan route:clear
 
 # Expose the port nginx is reachable on
 EXPOSE 80

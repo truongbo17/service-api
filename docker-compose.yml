@@ -10,6 +10,9 @@ services:
         restart: unless-stopped
         depends_on:
             - signature
+        environment:
+            - AUTH_TOKEN_API=${AUTH_TOKEN_API}
+            - ENDPOINT_TIKTOK_SIGNATURE=${ENDPOINT_TIKTOK_SIGNATURE}
         ports:
             - "${PORT_APP}:80"
         volumes:
