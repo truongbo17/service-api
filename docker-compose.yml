@@ -11,7 +11,7 @@ services:
         depends_on:
             - signature
         ports:
-            - "8081:80"
+            - "${PORT_APP}:80"
         environment:
             - AUTH_TOKEN_API=auth-token
         volumes:
@@ -22,5 +22,5 @@ services:
         image: ghcr.io/pablouser1/signtok:master
         restart: unless-stopped
         ports:
-            - "8080:8080"
+            - "${PORT_SIGNATURE}:8080"
 
