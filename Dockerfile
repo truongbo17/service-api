@@ -68,7 +68,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN composer clear-cache
 
 # Set prmission folder laravel
-COPY --chown=www . /var/www/api
+COPY --chown=www ./app /var/www/api
 RUN chmod 0777 -R /var/www/api/bootstrap
 RUN chmod 0777 -R /var/www/api/storage
 # RUN rm -rf /root/.composer

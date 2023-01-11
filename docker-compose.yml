@@ -12,10 +12,8 @@ services:
             - signature
         ports:
             - "${PORT_APP}:80"
-        environment:
-            - AUTH_TOKEN_API=auth-token
         volumes:
-            - ./storage/logs/nginx:/var/log/nginx
+            - ./app/storage/logs/nginx:/var/log/nginx
             - ./.docker/.composer:/root/.composer
     signature:
         container_name: signature
