@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a884cb35-7d98-484a-afc7-400048292fbb" name="Changes" comment="build docker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/_ide_helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +78,8 @@
       <workItem from="1673331080326" duration="1028000" />
       <workItem from="1673343763700" duration="9111000" />
       <workItem from="1673417512464" duration="1761000" />
+      <workItem from="1673442951997" duration="1474000" />
+      <workItem from="1673536670086" duration="1192000" />
     </task>
     <task id="LOCAL-00001" summary="build docker">
       <created>1673325738066</created>
