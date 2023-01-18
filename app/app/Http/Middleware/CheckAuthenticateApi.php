@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Str;
 
 class CheckAuthenticateApi
 {
@@ -18,11 +19,10 @@ class CheckAuthenticateApi
      */
     public function handle(Request $request, Closure $next)
     {
-        $auth_key = config('auth.custom_token_auth', 'nEtmArxiFu6iyw6oZdf89sEIVJfgcRiZ');
-        if($auth_key == "") $auth_key = 'nEtmArxiFu6iyw6oZdf89sEIVJfgcRiZ';
+        $this->checkKeyENV();
 
         if ($request->hasHeader(config('auth.key_custom_token_auth'))) {
-            if ($request->header(config('auth.key_custom_token_auth')) == $auth_key) {
+            if ($request->header(config('auth.key_custom_token_auth')) == config('auth.custom_token_auth')) {
                 return $next($request);
             }
         }
@@ -32,5 +32,17 @@ class CheckAuthenticateApi
             'data' => [],
             'error' => true
         ], 401);
+    }
+
+    private function checkKeyENV(): void
+    {
+        if(empty(env('AUTH_TOKEN_API')) || empty(config('auth.custom_token_auth'))){
+            response([
+                'status_code' => 401,
+                'message' => "Not config Auth-Token key in server",
+                'data' => [],
+                'error' => true
+            ], 401);
+        }
     }
 }
