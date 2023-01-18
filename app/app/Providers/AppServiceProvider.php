@@ -38,7 +38,6 @@ class AppServiceProvider extends ServiceProvider implements DeferrableProvider
         $config = config('crawl.guzzle');
         if (env('USE_PROXY_ROTATION', false) && count($this->list_proxy) > 0) {
             $config['handler'] = $this->handleProxy();
-            dd($config['handler']);
         }
 
         $this->app->singleton('client', fn() => new Client($config));
