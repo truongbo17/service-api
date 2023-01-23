@@ -20,16 +20,16 @@ class HashTagController extends Controller
                 count: $request->input('count', 35),
                 cursor: $request->input('cursor', 0)
             );
-
-            if (count($data_videos) < 1) {
+dump($data_videos);
+//            if (count($data_videos) < 1) {
                 $data_videos = TiktokApiNature::getVideoByHashTag(
                     method: 'GET',
                     challenge_name: $request->input('challenge_name'),
                     count: $request->input('count', 35),
                     cursor: $request->input('cursor', 0)
                 );
-            }
-
+//            }
+dd($data_videos);
             return response([
                 'status_code' => 200,
                 'message'     => "Success get data hashtag.",

@@ -247,8 +247,34 @@ class TiktokApi
 
             if ($response->getStatusCode() == 200) {
                 $data = json_decode($response->getBody()->getContents(), true);
+
+                $videos = [];
+                if (isset($data['itemList'])) {
+                    foreach ($data['itemList'] as $key => $value) {
+                        $videos[$key]["video_id"] = $value["video"]["id"];
+                        $videos[$key]["region"] = "";
+                        $videos[$key]["title"] = $value["desc"] ?? "";
+                        $videos[$key]["cover"] = $value["video"]["cover"] ?? "";
+                        $videos[$key]["origin_cover"] = $value["video"]["originCover"] ?? "";
+                        $videos[$key]["duration"] = $value["video"]["duration"] ?? 0;
+                        $videos[$key]["play"] = "";
+                        $videos[$key]["wmplay"] = $value["video"]["playAddr"];
+                        $videos[$key]["size"] = 0;
+                        $videos[$key]["wm_size"] = $value["video"]["bitrate"] ?? 0;
+                        $videos[$key]["music"] = $value["music"]["playUrl"];
+                        $videos[$key]["music_info"] = $value["music"] ?? [];
+                        $videos[$key]["play_count"] = $value["stats"]["playCount"] ?? 0;
+                        $videos[$key]["digg_count"] = $value["stats"]["diggCount"] ?? 0;
+                        $videos[$key]["comment_count"] = $value["stats"]["commentCount"] ?? 0;
+                        $videos[$key]["share_count"] = $value["stats"]["shareCount"] ?? 0;
+                        $videos[$key]["download_count"] = 0;
+                        $videos[$key]["create_time"] = $value["createTime"] ?? 0;
+                        $videos[$key]["author"] = array_merge($value["author"], $value["authorStats"]) ?? [];
+                    }
+                }
+
                 return [
-                    'videos'  => $data['itemList'] ?? [],
+                    'videos'  => $videos,
                     'cursor'  => (int)$data['cursor'] ?? 0,
                     'hasMore' => $data['hasMore'] ?? false,
                 ];
