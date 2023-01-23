@@ -577,7 +577,6 @@ class TikWMApi
                 'cursor'    => $cursor,
             ];
             $endpoint = build_external_url($this->host, $this->path_api_get_user_feed_videos, $query);
-
             $response = $this->client->request($method, $endpoint);
             $contents = json_decode($response->getBody()->getContents(), true);
             if ($contents["msg"] == "success") {

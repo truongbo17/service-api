@@ -4,11 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a884cb35-7d98-484a-afc7-400048292fbb" name="Changes" comment="build docker">
+    <list default="true" id="a884cb35-7d98-484a-afc7-400048292fbb" name="Changes" comment="update proxy rotation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.phpstorm.meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/.phpstorm.meta.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/_ide_helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/Api/Nature/Tiktok/TiktokApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/Api/Nature/Tiktok/TiktokApi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/Api/ThirdParty/TikWM/TikWMApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/Api/ThirdParty/TikWM/TikWMApi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/Console/Commands/TestApiCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/Console/Commands/TestApiCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/Http/Controllers/Api/MusicController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/Http/Controllers/Api/MusicController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/Http/Controllers/Api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/Http/Controllers/Api/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/Http/Middleware/CheckAuthenticateApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/Http/Middleware/CheckAuthenticateApi.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/RequestTikTok/Query.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/RequestTikTok/Query.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/RequestTikTok/Requests.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/RequestTikTok/Requests.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/RequestTikTok/UserAgents.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/RequestTikTok/UserAgents.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +90,10 @@
       <workItem from="1673343763700" duration="9111000" />
       <workItem from="1673417512464" duration="1761000" />
       <workItem from="1673442951997" duration="1474000" />
-      <workItem from="1673536670086" duration="1192000" />
+      <workItem from="1673536670086" duration="1727000" />
+      <workItem from="1673614399230" duration="195000" />
+      <workItem from="1674053059379" duration="4356000" />
+      <workItem from="1674352699442" duration="11847000" />
     </task>
     <task id="LOCAL-00001" summary="build docker">
       <created>1673325738066</created>
@@ -123,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673401883011</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update proxy rotation">
+      <created>1673538342723</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1673538342723</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +164,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="build docker" />
-    <option name="LAST_COMMIT_MESSAGE" value="build docker" />
+    <MESSAGE value="update proxy rotation" />
+    <option name="LAST_COMMIT_MESSAGE" value="update proxy rotation" />
   </component>
 </project>

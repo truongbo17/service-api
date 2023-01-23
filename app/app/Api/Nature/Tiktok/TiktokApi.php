@@ -231,9 +231,9 @@ class TiktokApi
                 "count"       => $count,
                 "challengeID" => $challenge_id,
                 "cursor"      => $cursor,
-                "device_id"   => $device_id,
             ];
             $query = Query::queryBasicTiktok(query: $query);
+            $query["device_id"] = $device_id;
 
             $endpoint = build_external_url(host: $this->host_mobile, path: $this->path_api_get_video_by_hashtag, query: $query);
 
@@ -245,12 +245,12 @@ class TiktokApi
                 method: $method
             );
 
-            if ($response->getStatusCode() === 200) {
+            if ($response->getStatusCode() == 200) {
                 $data = json_decode($response->getBody()->getContents(), true);
                 return [
-                    'videos'  => $data['itemList'],
-                    'cursor'  => (int)$data['cursor'],
-                    'hasMore' => $data['hasMore'],
+                    'videos'  => $data['itemList'] ?? [],
+                    'cursor'  => (int)$data['cursor'] ?? 0,
+                    'hasMore' => $data['hasMore'] ?? false,
                 ];
             }
         } catch (Exception $exception) {

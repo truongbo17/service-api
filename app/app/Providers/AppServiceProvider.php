@@ -20,7 +20,6 @@ class AppServiceProvider extends ServiceProvider implements DeferrableProvider
      * @var array $list_proxy
      * */
     private array $list_proxy = [
-        "http://129.0.21.23"
     ];
 
     /**

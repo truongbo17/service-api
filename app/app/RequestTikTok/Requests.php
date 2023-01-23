@@ -25,7 +25,7 @@ final class Requests
     public static function send(ClientInterface $client, string $endpoint, string $path, string $device_id, string $method = 'GET'): ResponseInterface
     {
         $signature = TiktokSignature::send(url: $endpoint);
-        if ($signature['status']) {
+        if ($signature['status'] ?? "" == "ok") {
             $url = $signature['data']['signed_url'];
             $user_agent = $signature['data']['navigator']['user_agent'];
             $headers = array_merge(Headers::DEFAULT_API_HEADERS, [
@@ -40,7 +40,6 @@ final class Requests
 
             $headers['x-secsdk-csrf-token'] = $extra['csrf_token'];
             $headers['User-Agent'] = $user_agent;
-
             $cookies = Cookies::getCookies(device_id: $device_id, csrf_session_id: $extra['csrf_session_id']);
             $cookies = Cookies::convertStringToArray(cookies: $cookies);
             $cookies_jar = CookieJar::fromArray($cookies, 'tiktok.com');

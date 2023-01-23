@@ -18,14 +18,14 @@ class MusicController extends Controller
                 method: 'GET',
                 music_id: $request->input('music_id'),
                 count: $request->input('count', 35),
-                cursor: $request->input('count', 0),
+                cursor: $request->input('cursor', 0),
             );
             if (count($data_videos) < 1) {
                 $data_videos = TiktokApiNature::getVideosByMusicId(
                     method: 'GET',
                     music_id: $request->input('music_id'),
                     count: $request->input('count', 35),
-                    cursor: $request->input('count', 0),
+                    cursor: $request->input('cursor', 0),
                 );
             }
 

@@ -18,14 +18,14 @@ class UserController extends Controller
                 method: 'GET',
                 unique_id: $request->input('unique_id'),
                 count: $request->input('count', 35),
-                cursor: $request->input('count', 0),
+                cursor: $request->input('cursor', 0),
             );
             if (count($data_videos) < 1) {
                 $data_videos = TiktokApiNature::getVideosByUser(
                     method: 'GET',
                     unique_id: $request->input('unique_id'),
                     count: $request->input('count', 35),
-                    cursor: $request->input('count', 0),
+                    cursor: $request->input('cursor', 0),
                 );
             }
 

@@ -19,7 +19,24 @@ class CheckAuthenticateApi
      */
     public function handle(Request $request, Closure $next)
     {
-        $this->checkKeyENV();
+        return $next($request);
+        if(empty(env('AUTH_TOKEN_API')) || empty(config('auth.custom_token_auth'))){
+            return response([
+                'status_code' => 401,
+                'message' => "Not config Auth-Token key in server",
+                'data' => [],
+                'error' => true
+            ], 401);
+        }
+
+        if(empty(env('ENDPOINT_TIKTOK_SIGNATURE')) || empty(config('tiktok.signature_service'))){
+            return response([
+                'status_code' => 401,
+                'message' => "Not config Tiktok Signature Endpoint in server",
+                'data' => [],
+                'error' => true
+            ], 401);
+        }
 
         if ($request->hasHeader(config('auth.key_custom_token_auth'))) {
             if ($request->header(config('auth.key_custom_token_auth')) == config('auth.custom_token_auth')) {
@@ -32,17 +49,5 @@ class CheckAuthenticateApi
             'data' => [],
             'error' => true
         ], 401);
-    }
-
-    private function checkKeyENV(): void
-    {
-        if(empty(env('AUTH_TOKEN_API')) || empty(config('auth.custom_token_auth'))){
-            response([
-                'status_code' => 401,
-                'message' => "Not config Auth-Token key in server",
-                'data' => [],
-                'error' => true
-            ], 401);
-        }
     }
 }
